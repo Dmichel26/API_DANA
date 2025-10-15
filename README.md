@@ -1,7 +1,7 @@
 # 🛍️ API DANA – Tienda con Autenticación JWT
+API desarrollada en Flask que gestiona una tienda en línea. La API permite la gestión de productos con información como código, nombre, descripción y costo de cada producto, y cuenta con autenticación segura mediante JSON Web Tokens (JWT) para asegurar el acceso.
 
-**API RESTful** desarrollada en **Flask** que permite la **gestión de usuarios y productos** con autenticación mediante **JSON Web Tokens (JWT)**.  
-Ideal para aprender o implementar un backend seguro con operaciones CRUD y conexión a base de datos **SQLite**.
+La base de datos utilizada es SQLite, proporcionando operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre los productos de la tienda.
 
 ---
 
@@ -59,9 +59,8 @@ venv\Scripts\activate         # En Windows
 
 3️⃣ Instalar dependencias
 pip install -r requirements.txt
-
-
-Si no tienes requirements.txt, puedes generarlo:
+python -m pip install flask
+python -m pip install flask-sqlalchemy
 
 pip freeze > requirements.txt
 
@@ -85,12 +84,6 @@ curl -X POST http://127.0.0.1:5000/users/login \
      -H "Content-Type: application/json" \
      -d '{"username": "admin", "password": "12345"}'
 
-
-Respuesta:
-
-{
-  "token": "<JWT_TOKEN>"
-}
 
 📦 Productos (requieren token)
 
